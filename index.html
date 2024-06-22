@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelby Lynn</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <!-- KaTeX JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <!-- Auto-render extension for KaTeX -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="header p-4">
+        <nav class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Shelby Lynn</h1>
+                <div class="space-x-4">
+                    <a href="#" hx-get="/home.html" hx-target="#content">Home</a>
+                    <a href="#" hx-get="/categories/technology.html" hx-target="#content">Technology</a>
+                    <a href="#" hx-get="/categories/cooking.html" hx-target="#content">Cooking</a>
+                    <a href="#" hx-get="/categories/math.html" hx-target="#content">Math</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div id="content" hx-get="/home.html" hx-trigger="load">
+        </div>
+    </main>
+
+    <footer class="footer p-4 mt-8">
+        <div class="container mx-auto text-center">
+            &copy; 2024 Shelb Lynn. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("htmx:afterSwap", function(event) {
+            renderMathInElement(document.body);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelby Lynn - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+
+<body class="bg-background-color text-text-color">
+    <div class="container mx-auto px-4 py-8">
+        <section class="mb-12 content-card">
+            <div class="flex flex-col md:flex-row items-center">
+                <img src="https://ninja.dog/Inoke9.png" alt="Shelby Lynn" class=" w-48 h-48 object-cover mb-4 md:mb-0 md:mr-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-primary-color">About Me</h2>
+                    <p class="mb-4">Hello! I'm Shelby Lynn, a passionate programmer with interests in technology, cooking, and mathematics. This blog is a space for my random thoughts and interests.</p>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 content-card">
+            <h2 class="text-2xl font-bold mb-4 text-primary-color">Programming Projects</h2>
+            <div id="github-gallery" hx-get="/galleries/programming.html" hx-trigger="load" hx-swap="innerHTML">
+                <p>Loading projects...</p>
+            </div>
+        </section>
+
+        <section class="mb-12 content-card">
+            <h2 class="text-2xl font-bold mb-4 text-primary-color">A few 35mm Film Photos</h2>
+            <div id="photography-gallery" hx-get="/galleries/photography.html" hx-trigger="load" hx-swap="innerHTML">
+                <p>Loading photography gallery...</p>
+            </div>
+        </section>
+
+        <section class="mb-12 content-card">
+            <h2 class="text-2xl font-bold mb-4 text-primary-color">Fractal Art Showcase</h2>
+            <div id="deviantart-gallery" hx-get="/galleries/deviantart.html" hx-trigger="load" hx-swap="innerHTML">
+                <p>Loading DeviantArt showcase...</p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="text-2xl font-bold mb-4 text-primary-color">Featured Posts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-surface-color p-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">
+                        <a href="#" hx-get="/posts/hello.html" hx-target="#content" class="text-link-color hover:text-primary-color">Hello World</a>
+                    </h3>
+                    <p class="text-text-secondary-color mb-2">Blogging Test</p>
+                    <p class="text-sm text-text-secondary-color">By Shelby Lynn</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

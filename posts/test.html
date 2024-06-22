@@ -1,0 +1,47 @@
+
+<script>
+    document.addEventListener('htmx:load', function() {
+        const toc = document.getElementById('toc');
+        const headers = document.querySelectorAll('.prose h2');
+
+        headers.forEach((header, index) => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.textContent = header.textContent;
+            a.href = `#${header.id}`;
+            a.className = 'text-secondary-color hover:text-primary-color';
+            a.setAttribute('hx-get', '');
+            a.setAttribute('hx-target', 'body');
+            a.setAttribute('hx-trigger', 'click');
+            a.setAttribute('hx-swap', 'none');
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+    });
+</script>
+
+<article class="flex flex-col md:flex-row">
+    <nav class="w-full md:w-64 p-4 md:sticky md:top-4 md:self-start md:mr-8">
+        <h2 class="text-lg font-semibold mb-2">Contents</h2>
+        <ul id="toc" class="space-y-2">
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-1">
+        <div class="content-card">
+            <h1 class="text-3xl font-bold mb-4 text-primary">Hello World</h1>
+            <p class="opacity-70 mb-4">Published on <time datetime="2024-06-21">June 21, 2024</time></p>
+            <div class="prose lg:prose-xl">
+                <h2 id="section1">Section 1</h2>
+                <p>Content for section 1...</p>
+
+                <h2 id="section2">Section 2</h2>
+                <p>Content for section 2...</p>
+
+                <h2 id="section3">Section 3</h2>
+                <p>Content for section 3...</p>
+            </div>
+        </div>
+    </div>
+</article>
