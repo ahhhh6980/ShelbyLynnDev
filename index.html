@@ -16,26 +16,24 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <header class="header p-4">
-        <nav class="container mx-auto">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold">Shelby Lynn</h1>
-                <div class="space-x-4">
+        <h1 class="text-2xl font-bold thing">Shelby Lynn</h1>
+        <nav class="container mx-auto ">
+            <div class="flex justify-between items-center navbar ">
                     <a href="#" hx-get="/home.html" hx-target="#content">Home</a>
                     <a href="#" hx-get="/categories/technology.html" hx-target="#content">Technology</a>
                     <a href="#" hx-get="/categories/cooking.html" hx-target="#content">Cooking</a>
                     <a href="#" hx-get="/categories/math.html" hx-target="#content">Math</a>
-                </div>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-8 flex-grow">
+    <main class="container mx-auto px-0 py-2 flex-grow">
         <div id="content" hx-get="/home.html" hx-trigger="load">
         </div>
     </main>
 
     <footer class="footer p-4 mt-8">
-        <div class="container mx-auto text-center">
+        <div class="containertext-center">
             &copy; 2024 Shelb Lynn. All rights reserved.
         </div>
     </footer>
